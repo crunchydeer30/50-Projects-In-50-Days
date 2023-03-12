@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing : border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin: 50px 0 30px;
+    text-align: center;
+}
+
+.faq {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq__box {
+    background-color: transparent;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: .4s;
+}
+
+.faq__box--active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq__box--active::before,
+.faq__box--active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: .1;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.faq__box--active::before {
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+.faq__box__title {
+    margin: 0 35px 0 0;
+    font-size: 1.2rem;
+}
+
+.faq__box__text {
+    margin: 0;
+    transition: .3s;
+    opacity: 0;
+    font-size: 0;
+    backface-visibility: hidden;
+}
+
+
+.faq__box--active .faq__box__text {
+    display: block;
+    margin: 30px 0 0;
+    opacity: 1;
+    font-size: 1rem;
+    backface-visibility: hidden;
+}
+
+.faq__box__toggle {
+    background-color: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+.faq__box__toggle:focus {
+    outline: 0;
+}
+
+
+.faq__box__toggle .fa-times {
+    display: none;
+}
+
+.faq__box--active .faq__box__toggle .fa-times {
+    color: #fff;
+    display: block;
+}
+
+.faq__box--active .faq__box__toggle .fa-chevron-down {
+    display: none;
+}
+
+.faq__box--active .faq__box__toggle {
+    background-color: #9fa4a8;
+}
+
+@keyframes showText {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+        max-height: 2rem;
+    }
+}
