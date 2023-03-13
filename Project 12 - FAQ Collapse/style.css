@@ -117,20 +117,3 @@ h1 {
 .faq__box--active .faq__box__toggle {
     background-color: #9fa4a8;
 }
-
-@keyframes showText {
-    0% {
-        opacity: 0;
-        max-height: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        display: block;
-        opacity: 1;
-        max-height: 2rem;
-    }
-}
